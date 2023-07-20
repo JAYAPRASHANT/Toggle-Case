@@ -1,37 +1,22 @@
 package Toggle;
 import java.util.*;
 public class Toggle {
-     public static int Togg(String s) {
-    	  StringBuilder res = new StringBuilder();
-    	 for(int i = 0; i < s.length(); i++){
-		        char c = s.charAt(i);
-		        if(Character.isUpperCase(c)){
-		            c = Character.toLowerCase(c);
-		            res.append(c);
-		        }else{
-		            c = Character.toUpperCase(c);
-		            res.append(c);
-		        }
-		    }
-		    System.out.println(res);
-			return 0;
-
-    	 
-     }
-	public static void main(String[] args) {
-		  Scanner sc = new Scanner(System.in);
-		 
-		    
-		    
-		    String s = sc.next();
-		    Togg(s);
-		    
-		   
-
-}
-
-
-
+	String toggle(String str) {
+		String str1=" ";
+		for(int i=0;i<str.length();i++) 
+		{
+			str1+=(char)((int)str.charAt(i)^(1<<5));
+		}
+		return str1;
 	}
 
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.next();
+		Toggle tt=new Toggle();
+		System.out.println(tt.toggle(str));
+		
+		
+	}
 
+}
